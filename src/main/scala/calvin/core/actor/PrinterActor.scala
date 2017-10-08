@@ -10,10 +10,7 @@ class PrinterActor extends Actor {
       println(throwable.getMessage)
 
     case option: Option[_] =>
-      option match {
-        case None => println()
-        case Some(value) => println(value)
-      }
+      option .foreach(value => println(value))
 
     case result: Any =>
       println(result)

@@ -24,15 +24,21 @@ object Shell extends App {
 
   val shell = system.actorOf(Props[ShellActor], "shell")
 
-  var line = null.asInstanceOf[String]
+  var line = ""
 
   while (line != exit) {
-    line = StdIn.readLine(prompt)
+
     shell ! line
+
     Thread.sleep(500)
+
+    if(line.isEmpty)
+      println()
+
+    line = StdIn.readLine(prompt)
   }
 
-  //system.terminate
+  system.terminate
 }
 
 
