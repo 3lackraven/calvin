@@ -12,11 +12,11 @@ object Main3 {
     val employee = Category("employee", Set(person))
     val address = Category("address")
 
-    val name = new Type("name", person)
-    val surname = new Type("surname", person)
-    val salary = new Type("salary", employee)
-    val city = new Type("city", address)
-    val street = new Type("street", address)
+    val name = Type("name", person)
+    val surname = Type("surname", person)
+    val salary = Type("salary", employee)
+    val city = Type("city", address)
+    val street = Type("street", address)
 
     val ep =
       Structure(
